@@ -6,6 +6,8 @@ import './App.css'
 // import { Heading } from './components/heading/Heading'
 // import { Oscar } from './components/oscar/Oscar'
 import { Button } from './components/button/Button'
+import { Box } from './components/context/Box'
+import { ThemeContextProvider } from './components/context/ThemeContext'
 import { Input } from './components/input/Input'
 import { Counter } from './components/state/Counter'
 
@@ -103,6 +105,14 @@ function App() {
       <LoggedIn />
       <User />
       <Counter />
+
+      <ThemeContextProvider>
+        <Box />
+
+      </ThemeContextProvider>
+
+
+
     </>
   )
 }
