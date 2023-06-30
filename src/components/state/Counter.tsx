@@ -1,14 +1,20 @@
 import { useReducer } from "react";
 
-
 type CounterState = {
-    counter: number
+    counter?: number | undefined
 }
 
-type CounterAction = {
-    type: string
+
+type UpdateAction = {
+    type: 'increment' | 'decrement'
     payload: number
 }
+
+type ResetAction = {
+    type: 'reset'
+}
+
+type CounterAction = UpdateAction | ResetAction
 
 const initialState = { count: 0 }
 
@@ -18,11 +24,11 @@ function reducer(state: CounterState, action: CounterAction) {
             return { count: state.count + action.payload }
         case 'decrement':
             return { count: state.count - action.payload }
-        case 'clear':
-            return { count: state.count -= state.count }
+        case 'reset':
+            return initialState
+        //{ count: state.count -= state.count }
         default:
             return state
-
     }
 }
 
@@ -32,20 +38,15 @@ export const Counter = () => {
         <>
             <button onClick={() => dispatch({ type: 'increment', payload: 10 })}>
                 Incremente 10
-
             </button>
             <button onClick={() => dispatch({ type: 'decrement', payload: 10 })}>
-                Incremente 10
-
+                Decremente 10
             </button>
-            <button onClick={() => dispatch({ type: 'clear', payload: 0 })}>
+            <button onClick={() => dispatch({ type: 'reset' })}>
                 Zerando
             </button>
             <hr />
             count : {state.count}
-
-
-
         </>
     )
 
