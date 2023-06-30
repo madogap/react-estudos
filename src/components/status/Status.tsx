@@ -1,4 +1,5 @@
 type StatusProps = {
+    //Valores que devem ocorrer obrigatório para a sentença
     status: 'loading' | 'sucess' | 'error'
 }
 
