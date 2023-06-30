@@ -5,9 +5,10 @@ export const LoggedIn = () => {
     const [isLoggedIn, setIsLoggedIn] = useState(false)
 
     const handleLogin = () => {
-        console.log('Logged in')
+        //console.log('Logged in')
         setIsLoggedIn(true)
     }
+
     const handleLogout = () => {
         console.log('Logged out')
         setIsLoggedIn(false)
@@ -20,4 +21,7 @@ export const LoggedIn = () => {
             <div>User is {isLoggedIn ? 'Logged in' : 'logged out'} </div>
         </div>
     )
+
+    
+
 }
