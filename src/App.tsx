@@ -7,6 +7,7 @@ import './App.css'
 // import { Oscar } from './components/oscar/Oscar'
 import { Button } from './components/button/Button'
 import { Input } from './components/input/Input'
+import { Counter } from './components/state/Counter'
 
 import { LoggedIn } from './components/state/LoggedIn'
 import { User } from './components/state/User'
@@ -79,7 +80,7 @@ function App() {
   //       </Oscar>
   //     </div>
 
-  
+
   return (
     <>
 
@@ -100,8 +101,8 @@ function App() {
       <br />
 
       <LoggedIn />
-      <User/>
-
+      <User />
+      <Counter />
     </>
   )
 }
